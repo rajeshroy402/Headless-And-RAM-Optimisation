@@ -1,5 +1,9 @@
 #!/bin/bash
 
+sudo init 3 
+sudo systemctl set-default multi-user.target
+sudo systemctl disable nvargus-daemon.service
+
 # Script to create and configure a 16GB swap file on a Jetson Nano
 
 # Step 1: Disable ZRAM if enabled
