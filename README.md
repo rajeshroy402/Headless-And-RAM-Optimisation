@@ -1,14 +1,20 @@
+# Jetson Nano Swap File Setup Script
 
-### How to Use the README:
+This repository provides a script for creating and configuring a 16GB swap file on a Jetson Nano device running Ubuntu. The `create_swap.sh` script simplifies the process of setting up swap space, which can improve performance for memory-intensive tasks.
 
-1. **Replace Placeholder Text:**
-   - Replace `<your-username>` and `<your-repo>` with your GitHub username and repository name, respectively.
-   - Update `[Your Name](https://github.com/<your-username>)` with your name and GitHub profile link if desired.
+## Script Overview
 
-2. **Create a License File (Optional):**
-   - If you include a `LICENSE` file, you can specify the type of license (e.g., MIT License).
+The `create_swap.sh` script automates the following steps:
 
-3. **Add the README to Your Repository:**
-   - Save the file as `README.md` in your repository’s root directory.
+1. **Disables ZRAM** (if enabled) to prevent conflicts.
+2. **Creates a 16GB swap file** in the root directory.
+3. **Sets appropriate permissions** for the swap file.
+4. **Formats the file** as swap space.
+5. **Enables the swap file** immediately.
+6. **Updates `/etc/fstab`** to make the swap file persistent across reboots.
+7. **Verifies** that the swap file is active.
 
-Feel free to adjust the README to better fit your project’s needs! Let me know if you need any more help.
+## Prerequisites
+
+- Jetson Nano with Ubuntu installed
+- Sudo privileges
